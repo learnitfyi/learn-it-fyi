@@ -1,0 +1,49 @@
+{
+  "name": "arcade-js-app",
+  "version": "1.0.0",
+  "description": "Arcade.js: An online arcade with a peak under the hood for those that are curious.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "js": "npm run build && gulp watch:js",
+    "sass": "gulp build:sass && gulp watch:sass",
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arcade-js/arcade-js-app.git"
+  },
+  "keywords": [
+    "arcade.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arcade-js/arcade-js-app/issues"
+  },
+  "homepage": "https://arcadejs.com",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^2.0.2",
+    "redux-devtools-extension": "^2.13.8",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}
