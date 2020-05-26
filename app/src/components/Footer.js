@@ -6,7 +6,7 @@ class Footer extends Component{
    render(){
       return(
          <div id="footer">
-            <p>&copy; {`${getYear()}`} Arcade.js</p>
+            <p>&copy; {`${getYear()}`} LearnIt.fyi</p>
          </div>
       );
    }
