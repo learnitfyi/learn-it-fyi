@@ -35,9 +35,7 @@ class Admin extends Component{
           uid: user.uid,
           providerData: user.providerData
         });
-        alert('user logged in');
       } else {
-        alert('user logged out');
         this.setState({ loggedIn: false });
       }
     }.bind(this));
