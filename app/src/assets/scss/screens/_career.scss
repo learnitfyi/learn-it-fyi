@@ -1,0 +1,6 @@
+#career {
+  @include temporary-button-style;
+  .title {
+    text-transform: capitalize;
+  }
+}

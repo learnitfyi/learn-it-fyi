@@ -3,11 +3,10 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 
 /* SCREENS */
 import Admin from "./Admin";
-import DataScientist from "./DataScientist";
+import Career from "./Career";
 import Home from "./Home";
 import LogIn from "./LogIn";
 import NotFound from "./NotFound";
-import SoftwareEngineer from "./SoftwareEngineer";
 import SignUp from "./SignUp";
 
 /* COMPONENTS */
@@ -28,10 +27,10 @@ class App extends Component{
                 {/* SCREENS */}
                 <Route exact path='/' component={Home} />
                 <Route exact path='/admin' component={Admin} />
-                <Route exact path='/data-scientist' component={DataScientist} />
+                <Route exact path='/data-scientist' component={Career} />
                 <Route exact path='/login' component={LogIn} />
                 <Route exact path='/signup' component={SignUp} />
-                <Route exact path='/software-engineer' component={SoftwareEngineer} />
+                <Route exact path='/software-engineer' component={Career} />
                 {/* 404 PAGE */}
                 <Route component={NotFound} />
               </Switch>
