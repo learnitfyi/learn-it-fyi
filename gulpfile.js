@@ -41,3 +41,16 @@ gulp.task("watch:sass", function(cb) {
   gulp.series("build:sass"));
   cb();
 });
+
+/** ASSETS WATCH **/
+
+/* watches all assets for changes and runs sub-tasks */
+gulp.task(
+  "assets:watch",
+  gulp.series(
+    "build:js",
+    "build:sass",
+    "watch:js",
+    "watch:sass"
+  )
+);
