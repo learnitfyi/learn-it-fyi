@@ -3,6 +3,11 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './configureStore'
 import App from './screens/App'
+import firebaseInit from './assets/js/firebase/init-app'
+
+
+// initialize firebase app
+firebaseInit();
 
 const store = configureStore();
 
