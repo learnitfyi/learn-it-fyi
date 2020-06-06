@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom'
 
 /* SCREENS */
-import About from "./About";
-import Gameroom from "./Gameroom";
+import Admin from "./Admin";
+import DataScientist from "./DataScientist";
 import Home from "./Home";
-import Leaderboard from "./Leaderboard";
 import LogIn from "./LogIn";
 import NotFound from "./NotFound";
+import SoftwareEngineer from "./SoftwareEngineer";
 import SignUp from "./SignUp";
-import UserProfile from "./UserProfile";
-
-/* GAMES */
-import BlockBreaker from "../games/BlockBreaker";
-import NumberSmash from "../games/NumberSmash";
 
 /* COMPONENTS */
 import Navbar from '../components/Navbar'
@@ -32,15 +27,11 @@ class App extends Component{
               <Switch>
                 {/* SCREENS */}
                 <Route exact path='/' component={Home} />
-                <Route exact path='/about' component={About} />
-                <Route exact path='/gameroom' component={Gameroom} />
-                <Route exact path='/leaderboard' component={Leaderboard} />
+                <Route exact path='/admin' component={Admin} />
+                <Route exact path='/data-scientist' component={DataScientist} />
                 <Route exact path='/login' component={LogIn} />
                 <Route exact path='/signup' component={SignUp} />
-                <Route exact path='/user-profile' component={UserProfile} />
-                {/* GAMES */}
-                <Route exact path='/block-breaker' component={BlockBreaker} />
-                <Route exact path='/number-smash' component={NumberSmash} />
+                <Route exact path='/software-engineer' component={SoftwareEngineer} />
                 {/* 404 PAGE */}
                 <Route component={NotFound} />
               </Switch>

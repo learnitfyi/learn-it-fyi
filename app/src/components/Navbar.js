@@ -10,11 +10,9 @@ class Navbar extends Component{
               <Link to="/">LearnIt</Link>
             </div>
             <div class="navbar__links-container">
-              <Link to="/about">About</Link>
-              <Link to="/gameroom">Gameroom</Link>
-              <Link to="/leaderboard">Leaderboard</Link>
-              <Link to="/login">Log In</Link>
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/software-engineer">Software Engineer</Link>
+              <Link to="/data-scientist">Data Scientist</Link>
+              <Link to="/admin">Admin</Link>
             </div>
          </div>
       );

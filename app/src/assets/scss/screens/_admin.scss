@@ -1,8 +1,8 @@
-#gameroom {
+#admin {
   @include temporary-button-style;
 }
 
-.game-list {
+.admin-dashboard {
   display: flex;
   flex-direction: row;
 }
