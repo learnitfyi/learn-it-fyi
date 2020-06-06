@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "js": "npm run build && gulp watch:js",
     "sass": "gulp build:sass && gulp watch:sass",
-    "start": "nodemon server/index.js",
+    "start": "firebase serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
