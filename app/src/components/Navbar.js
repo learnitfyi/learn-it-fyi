@@ -7,7 +7,7 @@ class Navbar extends Component{
       return(
          <div id="navbar">
             <div class="navbar__logo-container">
-              <Link to="/">LOGO</Link>
+              <Link to="/">LearnIt</Link>
             </div>
             <div class="navbar__links-container">
               <Link to="/about">About</Link>

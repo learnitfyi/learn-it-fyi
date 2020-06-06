@@ -1,7 +1,7 @@
 {
-  "name": "arcade-js-app",
+  "name": "learn-it-app",
   "version": "1.0.0",
-  "description": "Arcade.js: An online arcade with a peak under the hood for those that are curious.",
+  "description": "LearnIt: An online resource for people looking to increase they skillset.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -12,17 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arcade-js/arcade-js-app.git"
+    "url": "git+https://github.com/learnitfyi/learn-it-fyi.git"
   },
   "keywords": [
-    "arcade.js"
+    "learn it",
+    "learnit.fyi"
   ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Arcade-js/arcade-js-app/issues"
+    "url": "https://github.com/learnitfyi/learn-it-fyi/issues"
   },
-  "homepage": "https://arcadejs.com",
+  "homepage": "https://learnit.fyi",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
