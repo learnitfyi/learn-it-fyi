@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+/* SCREENS */
+import AdminDashboard from "./AdminDashboard";
+import LogIn from "./LogIn";
+
 
 class Admin extends Component{
-   render(){
-      return(
-         <div id="admin">
-            <h1>Admin</h1>
-            <div class="admin-dashboard">
-            </div>
-         </div>
-      );
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loggedIn: false
+    }
+  }
+
+  render(){
+    return(
+      <div id="admin">
+        <h1>Admin Dashboard</h1>
+        {this.state.loggedIn
+          ? <AdminDashboard />
+          : <LogIn />
+        }
+      </div>
+    );
    }
 }
 export default Admin;

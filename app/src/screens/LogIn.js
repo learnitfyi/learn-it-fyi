@@ -14,7 +14,7 @@ class LogIn extends Component{
               <input type="text" id="password" value="" placeholder="Password" required />
               <input type="submit" id="password" value="Log In" />
             </form>
-            <p>Please Sign Up to Compete in our Global Leaderboard!</p>
+            <p>Please log in to access the admin dashboard.</p>
             <Link to="/signup">Sign Up</Link>
          </div>
       );
