@@ -6,7 +6,7 @@ class Career extends Component{
   render() {
     return(
       <div id="career">
-        <h1 class="title">{pathToTitle(this.props.match.path)}</h1>
+        <h1 className="title">{pathToTitle(this.props.match.path)}</h1>
       </div>
     );
   }

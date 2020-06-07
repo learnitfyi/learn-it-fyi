@@ -1,6 +1,3 @@
-import { push } from 'react-router-redux';
-
-
 /* ACTION TYPES */
 const GET_LOGGED_IN_USER = 'GET_LOGGED_IN_USER'
 const LOG_IN_USER = 'LOG_IN_USER'
@@ -35,8 +32,9 @@ export const logIn = (email, password) => async dispatch => {
       user.loggedIn = true
     }
     dispatch(logInUser(user))
-    dispatch(push('/admin'));
+    window.location.pathname = '/admin'
   } catch (err) {
+    alert('username and/or password incorrect')
     console.error(err)
   }
 }

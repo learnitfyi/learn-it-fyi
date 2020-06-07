@@ -7,6 +7,7 @@ import { logOut } from '../reducers/user-reducer';
 
 class Navbar extends Component{
    render(){
+     console.log('user', this.props.user)
       return(
          <div id="navbar">
             <div className="navbar__logo-container">
@@ -32,6 +33,7 @@ class Navbar extends Component{
 const mapState = state => {
   return {
     loggedIn: state.user.loggedIn,
+    user: state.user
   }
 }
 
