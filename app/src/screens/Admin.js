@@ -12,18 +12,6 @@ import { connect } from 'react-redux';
 class Admin extends Component{
   constructor(props) {
     super(props);
-
-    this.state = {
-      // loading: true,
-      // loggedIn: false,
-      // displayName: null,
-      // email: null,
-      // emailVerified: null,
-      // photoURL: null,
-      // isAnonymous: null,
-      // uid: null,
-      // providerData: null,
-    };
   }
 
   componentDidMount () {
@@ -45,12 +33,7 @@ class Admin extends Component{
    //    }
    //  }.bind(this));
   }
-  componentDidUpdate() {
-    console.log("PROPS", this.props)
-  }
-
   render(){
-
     return(
       <div id="admin">
         {this.props.loggedIn
