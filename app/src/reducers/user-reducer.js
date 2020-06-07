@@ -1,17 +1,23 @@
+import { push } from 'react-router-redux';
+
+
 /* ACTION TYPES */
-const GET_USER = 'GET_USER'
-const LOGOUT_USER = 'LOGOUT_USER'
+const GET_LOGGED_IN_USER = 'GET_LOGGED_IN_USER'
+const LOG_IN_USER = 'LOG_IN_USER'
+const LOG_OUT_USER = 'LOG_OUT_USER'
+// const USER_SIGN_UP = 'USER_SIGN_UP'
 
 /* ACTION CREATORS */
-const gotUser = user => ({type: GET_USER, user})
-const logOutUser = user => ({type: LOGOUT_USER})
+const gotUser = user => ({type: GET_LOGGED_IN_USER, user})
+const logInUser = user => ({type: LOG_IN_USER, user})
+const logOutUser = user => ({type: LOG_OUT_USER})
+// const userSignUp = user => ({type: USER_SIGN_UP})
 
 /* THUNK CREATORS */
 export const getUser = (item) => {
     return async (dispatch) => {
         try {
             const user = await firebase.auth().currentUser
-            console.log('user', user, 'inside user-reducer')
             if (user) {
               user.loggedIn = true
             }
@@ -22,23 +28,47 @@ export const getUser = (item) => {
     }
 }
 
-export const logout = () => async dispatch => {
+export const logIn = (email, password) => async dispatch => {
   try {
-    await auth.signOut()
-    dispatch(logOutUser())
-    history.push('/log-in')
+    const user = await firebase.auth().signInWithEmailAndPassword(email, password)
+    if (user) {
+      user.loggedIn = true
+    }
+    dispatch(logInUser(user))
+    dispatch(push('/admin'));
   } catch (err) {
     console.error(err)
   }
 }
 
+export const logOut = () => async dispatch => {
+  try {
+    await firebase.auth().signOut()
+    dispatch(logOutUser())
+    dispatch(push('/log-in'));
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+// export const addSignedUpToStore = () => async dispatch => {
+//   try {
+//     dispatch(logInUser(userSignUp))
+//     dispatch(push('/admin'));
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
+
 /* REDUCER */
 export default function(user = { loggedIn: false }, action) {
   switch (action.type) {
-    case GET_USER:
+    case GET_LOGGED_IN_USER:
       return action.user
-    case LOGOUT_USER:
-      return {}
+    case LOG_IN_USER:
+      return action.user
+    case LOG_OUT_USER:
+      return { loggedIn: false }
     default:
       return user
   }

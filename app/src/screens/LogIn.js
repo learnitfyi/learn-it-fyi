@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-
+import { connect } from 'react-redux';
+import { logIn } from '../reducers/user-reducer';
 
 class LogIn extends Component{
   constructor(props) {
@@ -13,7 +14,7 @@ class LogIn extends Component{
 
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
-    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateEmail(event) {
@@ -22,16 +23,15 @@ class LogIn extends Component{
   updatePassword(event) {
       this.setState({ password: event.target.value })
   }
-  handleLogIn() {
-    alert('login')
+  handleSubmit() {
+    this.props.logIn(this.state.email, this.state.password)
   }
-
   render(){
     return(
       <div id="login">
         <h1>LogIn</h1>
         <p>Please log in to access the admin dashboard.</p>
-        <form onSubmit={this.handleLogIn}>
+        <form onSubmit={this.handleSubmit}>
           <label className="hidden" htmlFor="email">E-mail Address</label>
           <input type="email" id="email" value={this.state.email} placeholder="E-Mail Address" onChange={this.updateEmail} />
           <label className="hidden" htmlFor="password">Password</label>
@@ -44,4 +44,10 @@ class LogIn extends Component{
   }
 }
 
-export default LogIn;
+const mapDispatch = dispatch => {
+  return {
+    logIn: (email, password) => dispatch(logIn(email, password))
+  }
+}
+
+export default connect(null, mapDispatch)(LogIn);

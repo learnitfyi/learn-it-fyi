@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-
+import { connect } from 'react-redux';
+import { getUser } from '../reducers/user-reducer';
 
 class SignUp extends Component{
   constructor(props) {
@@ -51,7 +52,7 @@ class SignUp extends Component{
             displayName: `${this.state.firstName} ${this.state.lastName}`
           })
           .then(data => {
-            console.log(data, 'successful signup');
+            this.props.getUser();
             this.props.history.push('/admin');
           })
           .catch(function(error) {
@@ -151,4 +152,12 @@ class SignUp extends Component{
       );
    }
 }
-export default SignUp;
+
+
+const mapDispatch = dispatch => {
+  return {
+    getUser: () => dispatch(getUser())
+  }
+}
+
+export default connect(null, mapDispatch)(SignUp);

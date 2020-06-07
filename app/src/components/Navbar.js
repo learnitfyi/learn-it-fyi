@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { user, getUser, logout } from '../index';
+import { user } from '../index';
+import { logOut } from '../reducers/user-reducer';
+
 
 class Navbar extends Component{
-  async componentDidMount() {
-    await this.props.getUser()
-  }
    render(){
       return(
          <div id="navbar">
@@ -21,7 +20,7 @@ class Navbar extends Component{
                 : null
               }
               {this.props.loggedIn
-                ? <a href="" onClick={this.props.logout}>Log Out</a>
+                ? <a href="" onClick={this.props.logOut}>Log Out</a>
                 : <Link to="/log-in">Log In</Link>
               }
             </div>
@@ -32,17 +31,14 @@ class Navbar extends Component{
 
 const mapState = state => {
   return {
-    loggedIn: !state.user.loggedIn,
+    loggedIn: state.user.loggedIn,
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    logout() {
-      dispatch(logout())
-    },
-    getUser: () => {
-      dispatch(getUser())
+    logOut() {
+      dispatch(logOut())
     }
   }
 }
