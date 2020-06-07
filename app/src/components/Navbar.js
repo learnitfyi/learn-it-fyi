@@ -41,6 +41,7 @@ const mapDispatch = dispatch => {
   return {
     logOut() {
       dispatch(logOut())
+      this.props.history.push('/log-in');
     }
   }
 }

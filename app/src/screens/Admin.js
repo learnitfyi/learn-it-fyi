@@ -21,8 +21,6 @@ class Admin extends Component{
       uid: null,
       providerData: null,
     };
-
-    // this.getUser = this.getUser.bind(this);
   }
 
   componentDidMount () {
@@ -44,36 +42,15 @@ class Admin extends Component{
       }
     }.bind(this));
 
-    // await this.getUser();
     this.setState({ loading: false });
   }
-  //
-  // async getUser() {
-  //   const user = await firebase.auth().currentUser
-  //   if (user) {
-  //     this.setState({
-  //       loggedIn: true,
-  //       displayName: user.displayName,
-  //       email: user.email,
-  //       emailVerified: user.emailVerified,
-  //       photoURL: user.photoURL,
-  //       isAnonymous: user.isAnonymous,
-  //       uid: user.uid,
-  //       providerData: user.providerData
-  //     });
-  //   } else {
-  //     this.setState({ loggedIn: false });
-  //   }
-  // }
 
   render(){
     return(
       <div id="admin">
         {this.state.loading
-          ?
-            <h2>Loading...</h2>
-          :
-            this.state.loggedIn
+          ? <h2>Loading...</h2>
+          : this.state.loggedIn
             ? <AdminDashboard
                 displayName={this.state.displayName}
               />

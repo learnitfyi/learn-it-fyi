@@ -25,11 +25,12 @@ class LogIn extends Component{
   }
   handleSubmit() {
     this.props.logIn(this.state.email, this.state.password)
+    this.props.history.push('/admin');
   }
   render(){
     return(
       <div id="login">
-        <h1>LogIn</h1>
+        <h1>Log In</h1>
         <p>Please log in to access the admin dashboard.</p>
         <form onSubmit={this.handleSubmit}>
           <label className="hidden" htmlFor="email">E-mail Address</label>
