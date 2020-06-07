@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -24,3 +25,5 @@ if (process.env.NODE_ENV !== 'production' && module.hot) {
 }
 
 renderApp();
+
+export default store;

@@ -11,7 +11,8 @@ class Admin extends Component{
     super(props);
 
     this.state = {
-      loggedIn: null,
+      loading: true,
+      loggedIn: false,
       displayName: null,
       email: null,
       emailVerified: null,
@@ -20,43 +21,63 @@ class Admin extends Component{
       uid: null,
       providerData: null,
     };
+
+    // this.getUser = this.getUser.bind(this);
   }
 
   componentDidMount () {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        this.setState({
-          loggedIn: true,
-          displayName: user.displayName,
-          email: user.email,
-          emailVerified: user.emailVerified,
-          photoURL: user.photoURL,
-          isAnonymous: user.isAnonymous,
-          uid: user.uid,
-          providerData: user.providerData
+   firebase.auth().onAuthStateChanged(async function() {
+    const user = await firebase.auth().currentUser;
+    if (user) {
+      this.setState({
+         loggedIn: true,
+         displayName: user.displayName,
+         email: user.email,
+         emailVerified: user.emailVerified,
+         photoURL: user.photoURL,
+         isAnonymous: user.isAnonymous,
+         uid: user.uid,
+         providerData: user.providerData,
         });
       } else {
         this.setState({ loggedIn: false });
       }
     }.bind(this));
+
+    // await this.getUser();
+    this.setState({ loading: false });
   }
+  //
+  // async getUser() {
+  //   const user = await firebase.auth().currentUser
+  //   if (user) {
+  //     this.setState({
+  //       loggedIn: true,
+  //       displayName: user.displayName,
+  //       email: user.email,
+  //       emailVerified: user.emailVerified,
+  //       photoURL: user.photoURL,
+  //       isAnonymous: user.isAnonymous,
+  //       uid: user.uid,
+  //       providerData: user.providerData
+  //     });
+  //   } else {
+  //     this.setState({ loggedIn: false });
+  //   }
+  // }
 
   render(){
     return(
       <div id="admin">
-        <h1>Admin Dashboard</h1>
-        {this.state.loggedIn
-          ? <AdminDashboard
-              loggedIn={this.state.loggedIn}
-              displayName={this.state.displayName}
-              email={this.state.email}
-              emailVerified={this.state.emailVerified}
-              photoURL={this.state.photoURL}
-              isAnonymous={this.state.isAnonymous}
-              uid={this.state.uid}
-              providerData={this.state.providerData}
-            />
-          : <LogIn />
+        {this.state.loading
+          ?
+            <h2>Loading...</h2>
+          :
+            this.state.loggedIn
+            ? <AdminDashboard
+                displayName={this.state.displayName}
+              />
+            : <LogIn />
         }
       </div>
     );

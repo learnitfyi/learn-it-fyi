@@ -7,7 +7,7 @@ const exec = require("child_process").exec;
 
 /* runs `npm run build` script (webpack build) */
 gulp.task("build:js", function(cb) {
-  exec("npm run build", function(err, stdout, stderr) {
+  exec("npm run build:dev", function(err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);

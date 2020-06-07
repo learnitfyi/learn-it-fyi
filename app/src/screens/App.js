@@ -5,6 +5,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import Admin from "./Admin";
 import Career from "./Career";
 import Home from "./Home";
+import LogIn from "./LogIn";
 import NotFound from "./NotFound";
 import SignUp from "./SignUp";
 
@@ -27,7 +28,8 @@ class App extends Component{
                 <Route exact path='/' component={Home} />
                 <Route exact path='/admin' component={Admin} />
                 <Route exact path='/data-scientist' component={Career} />
-                <Route exact path='/signup' component={SignUp} />
+                <Route exact path='/log-in' component={LogIn} />
+                <Route exact path='/sign-up' component={SignUp} />
                 <Route exact path='/software-engineer' component={Career} />
                 {/* 404 PAGE */}
                 <Route component={NotFound} />

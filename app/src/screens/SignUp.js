@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
 class SignUp extends Component{
@@ -6,11 +7,11 @@ class SignUp extends Component{
     super(props);
 
     this.state = {
-      firstName: null,
-      lastName: null,
-      email: null,
-      password1: null,
-      password2: null,
+      firstName: '',
+      lastName: '',
+      email: '',
+      password1: '',
+      password2: ''
     };
 
     this.updateFirstName = this.updateFirstName.bind(this);
@@ -42,7 +43,27 @@ class SignUp extends Component{
   }
   handleSignUp() {
     if (this.validateSignUpForm()) {
-      alert('sign up success');
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password1)
+      .then(() => {
+        const user = firebase.auth().currentUser;
+        if (user) {
+          user.updateProfile({
+            displayName: `${this.state.firstName} ${this.state.lastName}`
+          })
+          .then(data => {
+            console.log(data, 'successful signup');
+            this.props.history.push('/admin');
+          })
+          .catch(function(error) {
+            console.error(errer);
+          });
+        }
+      })
+      .catch(function(error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(`${errorCode}: ${errorMessage}`);
+      });
     }
   }
   validateSignUpForm() {
@@ -111,19 +132,21 @@ class SignUp extends Component{
       return(
          <div id="signup">
             <h1>SignUp</h1>
+            <p>Please sign up in to access to request admin dashboard access.</p>
             <form onSubmit={this.handleSignUp}>
-              <label class="hidden" for="first_name">First Name</label>
+              <label className="hidden" htmlFor="first_name">First Name</label>
               <input type="text" id="first_name" value={this.state.firstName} placeholder="First Name" onChange={this.updateFirstName} />
-              <label class="hidden" for="last_name">Last Name</label>
+              <label className="hidden" htmlFor="last_name">Last Name</label>
               <input type="text" id="last_name"  value={this.state.lastName} placeholder="Last Name" onChange={this.updateLastName} />
-              <label class="hidden" for="email">E-mail Address</label>
+              <label className="hidden" htmlFor="email">E-mail Address</label>
               <input type="email" id="email" value={this.state.email} placeholder="E-Mail Address" onChange={this.updateEmail} />
-              <label class="hidden" for="password1">Password</label>
+              <label className="hidden" htmlFor="password1">Password</label>
               <input type="password" id="password1" value={this.state.password1} placeholder="Create a Password" onChange={this.updatePassword1} />
-              <label class="hidden" for="password2">Re-Enter Password</label>
+              <label className="hidden" htmlFor="password2">Re-Enter Password</label>
               <input type="password" id="password2" value={this.state.password2} placeholder="Re-Enter Password" onChange={this.updatePassword2} />
               <input type="submit" id="signup" value="Create Account" />
             </form>
+            <p>or <Link to="/log-in">Log In</Link> here</p>
          </div>
       );
    }

@@ -6,15 +6,8 @@ class AdminDashboard extends Component{
    render(){
       return(
          <div id="admin-dashboard">
-           <h1>Welcome, {this.props.displayName}</h1>
-           <p>{this.props.loggedIn}</p>
-           <p>{this.props.displayName}</p>
-           <p>{this.props.email}</p>
-           <p>{this.props.emailVerified}</p>
-           <p>{this.props.photoURL}</p>
-           <p>{this.props.isAnonymous}</p>
-           <p>{this.props.uid}</p>
-           <p>{this.props.providerData}</p>
+           <h1>Admin</h1>
+           <h2>Welcome to your Dashboard, {this.props.displayName}.</h2>
          </div>
       );
    }
