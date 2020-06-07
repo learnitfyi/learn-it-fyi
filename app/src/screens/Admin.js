@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+
 /* SCREENS */
 import AdminDashboard from "./AdminDashboard";
 import LogIn from "./LogIn";
@@ -60,4 +61,5 @@ class Admin extends Component{
     );
    }
 }
+
 export default Admin;

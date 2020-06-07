@@ -153,7 +153,6 @@ class SignUp extends Component{
    }
 }
 
-
 const mapDispatch = dispatch => {
   return {
     getUser: () => dispatch(getUser())

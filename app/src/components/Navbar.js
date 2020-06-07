@@ -4,9 +4,18 @@ import { connect } from 'react-redux';
 import { user } from '../index';
 import { logOut } from '../reducers/user-reducer';
 
-
 class Navbar extends Component{
-   render(){
+  constructor(props) {
+    super(props)
+
+    this.handleLogOutClick = this.handleLogOutClick.bind(this)
+  }
+
+  handleLogOutClick() {
+    this.props.logOut()
+  }
+
+  render(){
      console.log('user', this.props.user)
       return(
          <div id="navbar">
@@ -21,7 +30,7 @@ class Navbar extends Component{
                 : null
               }
               {this.props.loggedIn
-                ? <a href="" onClick={this.props.logOut}>Log Out</a>
+                ? <a href="" onClick={this.handleLogOutClick}>Log Out</a>
                 : <Link to="/log-in">Log In</Link>
               }
             </div>
@@ -39,10 +48,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    logOut() {
-      dispatch(logOut())
-      this.props.history.push('/log-in');
-    }
+    logOut: () => dispatch(logOut())
   }
 }
 

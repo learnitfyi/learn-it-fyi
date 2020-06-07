@@ -8,8 +8,9 @@ class LogIn extends Component{
     super(props);
 
     this.state = {
+      loading: false,
       email: '',
-      password: ''
+      password: '',
     };
 
     this.updateEmail = this.updateEmail.bind(this);
@@ -24,12 +25,16 @@ class LogIn extends Component{
       this.setState({ password: event.target.value })
   }
   handleSubmit() {
+    this.setState({ loading: true })
     this.props.logIn(this.state.email, this.state.password)
     this.props.history.push('/admin');
   }
   render(){
     return(
       <div id="login">
+      {this.state.Loading
+        ? null
+        : <div>
         <h1>Log In</h1>
         <p>Please log in to access the admin dashboard.</p>
         <form onSubmit={this.handleSubmit}>
@@ -41,6 +46,9 @@ class LogIn extends Component{
         </form>
         <p>or <Link to="/sign-up">Sign Up</Link> here</p>
       </div>
+      }
+      </div>
+
     );
   }
 }

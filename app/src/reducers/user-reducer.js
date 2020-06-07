@@ -15,8 +15,10 @@ export const getUser = (item) => {
             const user = await firebase.auth().currentUser
             if (user) {
               user.loggedIn = true
+              dispatch(gotUser(user))
+            } else {
+              dispatch(gotUser({ loggedIn: false }))
             }
-            dispatch(gotUser(user))
         } catch (error) {
             console.error(error)
         }
