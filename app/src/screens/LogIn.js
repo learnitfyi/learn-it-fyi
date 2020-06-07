@@ -8,7 +8,6 @@ class LogIn extends Component{
     super(props);
 
     this.state = {
-      loading: false,
       email: '',
       password: '',
     };
@@ -25,14 +24,12 @@ class LogIn extends Component{
       this.setState({ password: event.target.value })
   }
   handleSubmit() {
-    this.setState({ loading: true })
     this.props.logIn(this.state.email, this.state.password)
-    this.props.history.push('/admin');
   }
   render(){
     return(
       <div id="login">
-      {this.state.Loading
+      {this.props.loggedIn
         ? null
         : <div>
         <h1>Log In</h1>
@@ -53,10 +50,17 @@ class LogIn extends Component{
   }
 }
 
+
+const mapState = state => {
+  return {
+    loggedIn: state.user.loggedIn
+  }
+}
+
 const mapDispatch = dispatch => {
   return {
     logIn: (email, password) => dispatch(logIn(email, password))
   }
 }
 
-export default connect(null, mapDispatch)(LogIn);
+export default connect(mapState, mapDispatch)(LogIn);

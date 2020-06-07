@@ -28,9 +28,6 @@ export const getUser = (item) => {
 export const logIn = (email, password) => async dispatch => {
   try {
     const user = await firebase.auth().signInWithEmailAndPassword(email, password)
-    if (user) {
-      user.loggedIn = true
-    }
     dispatch(logInUser(user))
   } catch (err) {
     alert('username and/or password incorrect')
@@ -48,14 +45,14 @@ export const logOut = () => async dispatch => {
 }
 
 /* REDUCER */
-export default function(user = { loggedIn: false }, action) {
+export default function(user = { displayName: '', loggedIn: false }, action) {
   switch (action.type) {
     case GET_LOGGED_IN_USER:
-      return action.user
+      return {...action.user, loggedIn: true}
     case LOG_IN_USER:
-      return action.user
+      return {...action.user, loggedIn: true}
     case LOG_OUT_USER:
-      return { loggedIn: false }
+      return user
     default:
       return user
   }

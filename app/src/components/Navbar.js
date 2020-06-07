@@ -31,7 +31,7 @@ class Navbar extends Component{
               }
               {this.props.loggedIn
                 ? <a href="" onClick={this.handleLogOutClick}>Log Out</a>
-                : <Link to="/log-in">Log In</Link>
+                : <Link to="/admin">Log In</Link>
               }
             </div>
          </div>
