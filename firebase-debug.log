@@ -1,0 +1,65 @@
+[debug] [2020-06-14T22:13:31.685Z] ----------------------------------------------------------------------
+[debug] [2020-06-14T22:13:31.689Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-06-14T22:13:31.689Z] CLI Version:   8.4.0
+[debug] [2020-06-14T22:13:31.689Z] Platform:      darwin
+[debug] [2020-06-14T22:13:31.690Z] Node Version:  v8.13.0
+[debug] [2020-06-14T22:13:31.690Z] Time:          Sun Jun 14 2020 18:13:31 GMT-0400 (EDT)
+[debug] [2020-06-14T22:13:31.691Z] ----------------------------------------------------------------------
+[debug] [2020-06-14T22:13:31.691Z] 
+[debug] [2020-06-14T22:13:31.708Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-14T22:13:31.708Z] > authorizing via signed-in user
+[debug] [2020-06-14T22:13:31.709Z] [iam] checking project learn-it-fyi for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-06-14T22:13:31.718Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-06-14T22:13:31.719Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-06-14T22:13:31.962Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:31 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-14T22:13:31.974Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/learn-it-fyi:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-06-14T22:13:32.269Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=165","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-14T22:13:32.271Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/learn-it-fyi  
+ 
+[debug] [2020-06-14T22:13:32.695Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'learn-it-fyi'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-06-14T22:13:32.699Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/learn-it-fyi/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-06-14T22:13:33.716Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[learn-it-fyi]: beginning deploy... 
+[info] i  hosting[learn-it-fyi]: found 3 files in app/public 
+[debug] [2020-06-14T22:13:33.845Z] [hosting] hash cache [YXBwL3B1YmxpYw] stored for 3 files
+[debug] [2020-06-14T22:13:33.846Z] [hosting][hash queue][FINAL] {"max":116,"min":3,"avg":41.666666666666664,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":121}
+[debug] [2020-06-14T22:13:33.846Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/learn-it-fyi/versions/b825d64a40c2a6ed:populateFiles  
+ <request body omitted>
+[debug] [2020-06-14T22:13:34.381Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-14T22:13:34.385Z] [hosting][populate queue][FINAL] {"max":538,"min":538,"avg":538,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":541}
+[debug] [2020-06-14T22:13:34.385Z] [hosting] uploads queued: 1
+[debug] [2020-06-14T22:13:36.074Z] [hosting][upload queue][FINAL] {"max":1692,"min":1692,"avg":1692,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1692}
+[info] ✔  hosting[learn-it-fyi]: file upload complete 
+[debug] [2020-06-14T22:13:36.075Z] [hosting] deploy completed after 2358ms
+[debug] [2020-06-14T22:13:36.076Z] [
+  {
+    "config": {
+      "public": "app/public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "learn-it-fyi"
+    },
+    "site": "learn-it-fyi",
+    "version": "sites/learn-it-fyi/versions/b825d64a40c2a6ed"
+  }
+]
+[info] i  hosting[learn-it-fyi]: finalizing version... 
+[debug] [2020-06-14T22:13:36.076Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/learn-it-fyi/versions/b825d64a40c2a6ed?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-06-14T22:13:36.603Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Jun 2020 22:13:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
