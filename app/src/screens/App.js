@@ -20,33 +20,41 @@ import Footer from '../components/Footer'
 class App extends Component{
   componentDidMount () {
     this.props.getUser()
-   }
-   render(){
-      return(
-        <HashRouter>
-          <div>
-            <nav>
-              <Navbar />
-            </nav>
-            <main>
-              <Switch>
-                {/* SCREENS */}
-                <Route exact path='/' component={Home} />
-                <Route exact path='/admin' component={Admin} />
-                <Route exact path='/data-scientist' component={Career} />
-                <Route exact path='/sign-up' component={SignUp} />
-                <Route exact path='/software-engineer' component={Career} />
-                {/* 404 PAGE */}
-                <Route component={NotFound} />
-              </Switch>
-            </main>
-            <footer>
-              <Footer />
-            </footer>
-          </div >
-        </HashRouter>
-      )
-   }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('user logged in: ', user,)
+      } else {
+        console.log('user logged out')
+      }
+    })
+  }
+  render(){
+    return(
+      <HashRouter>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+          <main>
+            <Switch>
+              {/* SCREENS */}
+              <Route exact path='/' component={Home} />
+              <Route exact path='/admin' component={Admin} />
+              <Route exact path='/data-scientist' component={Career} />
+              <Route exact path='/sign-up' component={SignUp} />
+              <Route exact path='/software-engineer' component={Career} />
+              {/* 404 PAGE */}
+              <Route component={NotFound} />
+            </Switch>
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </div >
+      </HashRouter>
+    )
+  }
 }
 const mapState = state => {
   return {

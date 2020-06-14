@@ -3,29 +3,24 @@ import { Link } from "react-router-dom"
 import { connect } from 'react-redux'
 import { user } from '../index'
 
-
 /* SCREENS */
 import AdminDashboard from "./AdminDashboard"
 import LogIn from "./LogIn"
 
 
 class Admin extends Component{
-  constructor(props) {
-    super(props)
-  }
-
   render(){
     return(
       <div id="admin">
         {this.props.loggedIn
-            ? <AdminDashboard
-                userName={this.props.userName}
-              />
-            : <LogIn />
+          ? <AdminDashboard
+            userName={this.props.userName}
+            />
+          : <LogIn />
         }
       </div>
     )
-   }
+  }
 }
 
 const mapState = state => {
