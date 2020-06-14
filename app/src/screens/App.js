@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { getCareers } from '../reducers/careers-reducer'
+import { getSkills } from '../reducers/skills-reducer'
 import { getUser } from '../reducers/user-reducer'
-
 
 /* SCREENS */
 import Admin from "./Admin"
@@ -19,6 +20,8 @@ import Footer from '../components/Footer'
 
 class App extends Component{
   componentDidMount () {
+    this.props.getCareers()
+    this.props.getSkills()
     this.props.getUser()
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -56,15 +59,18 @@ class App extends Component{
     )
   }
 }
-const mapState = state => {
-  return {
-  }
-}
+
+// const mapState = state => {
+//   return {
+//   }
+// }
 
 const mapDispatch = dispatch => {
   return {
+    getCareers: () => dispatch(getCareers()),
+    getSkills: () => dispatch(getSkills()),
     getUser: () => dispatch(getUser())
   }
 }
 
-export default connect(mapState, mapDispatch)(App)
+export default connect(null, mapDispatch)(App)

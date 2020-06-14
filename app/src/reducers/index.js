@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux'
+import careersReducer from './careers-reducer'
+import skillsReducer from './skills-reducer'
 import userReducer from './user-reducer'
 
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  careers: careersReducer,
+  skills: skillsReducer,
+  user: userReducer
 })
 
 export default rootReducer
