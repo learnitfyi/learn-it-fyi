@@ -15,4 +15,7 @@
       color: $secondary-color;
     }
   }
+  @media screen and (max-width: $phablet-max) {
+    font-size: 10px;
+  }
 }
