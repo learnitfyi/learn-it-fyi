@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getUser } from '../reducers/user-reducer'
 
 
 /* SCREENS */
-import Admin from "./Admin";
-import Career from "./Career";
-import Home from "./Home";
-import LogIn from "./LogIn";
-import NotFound from "./NotFound";
-import SignUp from "./SignUp";
+import Admin from "./Admin"
+import Career from "./Career"
+import Home from "./Home"
+import LogIn from "./LogIn"
+import NotFound from "./NotFound"
+import SignUp from "./SignUp"
 
 /* COMPONENTS */
 import Navbar from '../components/Navbar'
@@ -16,6 +18,9 @@ import Footer from '../components/Footer'
 
 
 class App extends Component{
+  componentDidMount () {
+    this.props.getUser()
+   }
    render(){
       return(
         <HashRouter>
@@ -43,5 +48,15 @@ class App extends Component{
       );
    }
 }
+const mapState = state => {
+  return {
+  }
+}
 
-export default App;
+const mapDispatch = dispatch => {
+  return {
+    getUser: () => dispatch(getUser())
+  }
+}
+
+export default connect(mapState, mapDispatch)(App)

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { user } from '../index';
-import { logOut } from '../reducers/user-reducer';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { user } from '../index'
+import { logOut } from '../reducers/user-reducer'
 
 class Navbar extends Component{
   constructor(props) {
@@ -52,4 +52,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar);
+export default connect(mapState, mapDispatch)(Navbar)

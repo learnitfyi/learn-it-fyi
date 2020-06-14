@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { user } from '../index';
+import { connect } from 'react-redux';
+import { user } from '../index'
 
 
 /* SCREENS */
 import AdminDashboard from "./AdminDashboard";
 import LogIn from "./LogIn";
-import { connect } from 'react-redux';
 
 
 class Admin extends Component{
@@ -14,31 +14,12 @@ class Admin extends Component{
     super(props);
   }
 
-  componentDidMount () {
-   // firebase.auth().onAuthStateChanged(async function() {
-   //  const user = await firebase.auth().currentUser;
-   //  if (user) {
-   //    this.setState({
-   //       loggedIn: true,
-   //       displayName: user.displayName,
-   //       email: user.email,
-   //       emailVerified: user.emailVerified,
-   //       photoURL: user.photoURL,
-   //       isAnonymous: user.isAnonymous,
-   //       uid: user.uid,
-   //       providerData: user.providerData,
-   //      });
-   //    } else {
-   //      this.setState({ loggedIn: false });
-   //    }
-   //  }.bind(this));
-  }
   render(){
     return(
       <div id="admin">
         {this.props.loggedIn
             ? <AdminDashboard
-                displayName={this.props.user.user.displayName}
+                userName={this.props.userName}
               />
             : <LogIn />
         }
@@ -50,7 +31,7 @@ class Admin extends Component{
 const mapState = state => {
   return {
     loggedIn: state.user.loggedIn,
-    user: state.user
+    userName: state.user.displayName
   }
 }
 

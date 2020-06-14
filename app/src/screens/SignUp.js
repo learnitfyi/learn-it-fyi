@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import { getUser } from '../reducers/user-reducer';
+import { getUser } from '../reducers/user-reducer'
+
 
 class SignUp extends Component{
   constructor(props) {
@@ -42,10 +43,11 @@ class SignUp extends Component{
   updatePassword2(event) {
       this.setState({ password2: event.target.value })
   }
-  handleSignUp() {
+  handleSignUp(e) {
+    e.preventDefault();
     if (this.validateSignUpForm()) {
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password1)
-      .then(() => {
+      .then((cred) => {
         const user = firebase.auth().currentUser;
         if (user) {
           user.updateProfile({
@@ -145,9 +147,9 @@ class SignUp extends Component{
               <input type="password" id="password1" value={this.state.password1} placeholder="Create a Password" onChange={this.updatePassword1} />
               <label className="hidden" htmlFor="password2">Re-Enter Password</label>
               <input type="password" id="password2" value={this.state.password2} placeholder="Re-Enter Password" onChange={this.updatePassword2} />
-              <input type="submit" id="signup" value="Create Account" />
+              <button type="submit" id="signup">Create Account</button>
             </form>
-            <p>or <Link to="/log-in">Log In</Link> here</p>
+            <p>or <Link to="/admin">Log In</Link> here</p>
          </div>
       );
    }

@@ -9,25 +9,22 @@ const logInUser = user => ({type: LOG_IN_USER, user})
 const logOutUser = user => ({type: LOG_OUT_USER})
 
 /* THUNK CREATORS */
-export const getUser = (item) => {
-    return async (dispatch) => {
-        try {
-            const user = await firebase.auth().currentUser
-            if (user) {
-              user.loggedIn = true
-              dispatch(gotUser(user))
-            } else {
-              dispatch(gotUser({ loggedIn: false }))
-            }
-        } catch (error) {
-            console.error(error)
-        }
-    }
+export const getUser = (item) => async dispatch => {
+  try {
+    await firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        dispatch(gotUser(user))
+      }
+    });
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 export const logIn = (email, password) => async dispatch => {
   try {
-    const user = await firebase.auth().signInWithEmailAndPassword(email, password)
+    await firebase.auth().signInWithEmailAndPassword(email, password)
+    const user = await firebase.auth().currentUser
     dispatch(logInUser(user))
   } catch (err) {
     alert('username and/or password incorrect')
@@ -40,20 +37,21 @@ export const logOut = () => async dispatch => {
     await firebase.auth().signOut()
     dispatch(logOutUser())
   } catch (err) {
+    alert('error logging out')
     console.error(err)
   }
 }
 
 /* REDUCER */
-export default function(user = { displayName: '', loggedIn: false }, action) {
+export default function(defaultUser = { loggedIn: false }, action) {
   switch (action.type) {
     case GET_LOGGED_IN_USER:
-      return {...action.user, loggedIn: true}
+      return {...action.user, loggedIn: !!action.user}
     case LOG_IN_USER:
-      return {...action.user, loggedIn: true}
+      return {...action.user, loggedIn: !!action.user}
     case LOG_OUT_USER:
-      return user
+      return defaultUser
     default:
-      return user
+      return defaultUser
   }
 }

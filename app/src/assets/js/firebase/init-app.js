@@ -1,6 +1,4 @@
 const firebaseInit = () => {
-  console.log('begin app init')
-
   const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_ADMIN,
@@ -16,8 +14,6 @@ const firebaseInit = () => {
 
   const auth = firebase.auth();
   const db = firebase.firestore();
-
-  console.log('end app init')
 }
 
 export default firebaseInit;
