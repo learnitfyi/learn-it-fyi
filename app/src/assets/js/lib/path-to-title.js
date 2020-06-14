@@ -2,7 +2,7 @@ const pathToTitle = (input) => {
   return input
   .slice(-(input.length-1))
   .split('-')
-  .join(' ');
+  .join(' ')
 }
 
-export default pathToTitle;
+export default pathToTitle

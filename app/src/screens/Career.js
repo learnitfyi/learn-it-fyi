@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import pathToTitle from '../assets/js/lib/path-to-title';
+import React, { Component } from 'react'
+import pathToTitle from '../assets/js/lib/path-to-title'
 
 
 class Career extends Component{
@@ -8,8 +8,8 @@ class Career extends Component{
       <div id="career">
         <h1 className="title">{pathToTitle(this.props.match.path)}</h1>
       </div>
-    );
+    )
   }
 }
 
-export default Career;
+export default Career

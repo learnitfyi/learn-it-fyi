@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
-import { logIn } from '../reducers/user-reducer';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
+import { logIn } from '../reducers/user-reducer'
 
 class LogIn extends Component{
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       email: '',
       password: '',
-    };
+    }
 
-    this.updateEmail = this.updateEmail.bind(this);
-    this.updatePassword = this.updatePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateEmail = this.updateEmail.bind(this)
+    this.updatePassword = this.updatePassword.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   updateEmail(event) {
@@ -46,7 +46,7 @@ class LogIn extends Component{
       }
       </div>
 
-    );
+    )
   }
 }
 
@@ -63,4 +63,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(LogIn);
+export default connect(mapState, mapDispatch)(LogIn)

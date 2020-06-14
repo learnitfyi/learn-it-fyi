@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
 import { user } from '../index'
 
 
 /* SCREENS */
-import AdminDashboard from "./AdminDashboard";
-import LogIn from "./LogIn";
+import AdminDashboard from "./AdminDashboard"
+import LogIn from "./LogIn"
 
 
 class Admin extends Component{
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render(){
@@ -24,7 +24,7 @@ class Admin extends Component{
             : <LogIn />
         }
       </div>
-    );
+    )
    }
 }
 
@@ -40,4 +40,4 @@ const mapState = state => {
 //   }
 // }
 
-export default connect(mapState, null)(Admin);
+export default connect(mapState, null)(Admin)

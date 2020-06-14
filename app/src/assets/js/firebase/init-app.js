@@ -8,12 +8,12 @@ const firebaseInit = () => {
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
-  };
+  }
 
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig)
 
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+  const auth = firebase.auth()
+  const db = firebase.firestore()
 }
 
-export default firebaseInit;
+export default firebaseInit

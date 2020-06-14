@@ -1,3 +1,3 @@
-const getYear = () => { return new Date().getFullYear().toString(); }
+const getYear = () => { return new Date().getFullYear().toString() }
 
-export default getYear;
+export default getYear

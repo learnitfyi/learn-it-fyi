@@ -15,7 +15,7 @@ export const getUser = (item) => async dispatch => {
       if (user) {
         dispatch(gotUser(user))
       }
-    });
+    })
   } catch (err) {
     console.error(err)
   }

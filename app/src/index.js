@@ -1,4 +1,4 @@
-import regeneratorRuntime from "regenerator-runtime";
+import regeneratorRuntime from "regenerator-runtime"
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -8,9 +8,9 @@ import firebaseInit from './assets/js/firebase/init-app'
 
 
 // initialize firebase app
-firebaseInit();
+firebaseInit()
 
-const store = configureStore();
+const store = configureStore()
 
 const renderApp = () =>
   render(
@@ -21,9 +21,9 @@ const renderApp = () =>
   )
 
 if (process.env.NODE_ENV !== 'production' && module.hot) {
-  module.hot.accept('./screens/App', renderApp);
+  module.hot.accept('./screens/App', renderApp)
 }
 
-renderApp();
+renderApp()
 
-export default store;
+export default store

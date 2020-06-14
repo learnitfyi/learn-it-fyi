@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 
 class NotFound extends Component{
@@ -7,7 +7,7 @@ class NotFound extends Component{
          <div id="not-found">
             <h1>Error: 404</h1>
          </div>
-      );
+      )
    }
 }
-export default NotFound;
+export default NotFound

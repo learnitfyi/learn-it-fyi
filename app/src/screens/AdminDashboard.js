@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
 
 class AdminDashboard extends Component{
@@ -10,7 +10,7 @@ class AdminDashboard extends Component{
            <h1>Admin</h1>
            <h2>Welcome to your Dashboard, {this.props.userName}.</h2>
          </div>
-      );
+      )
    }
 }
-export default AdminDashboard;
+export default AdminDashboard

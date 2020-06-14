@@ -45,7 +45,7 @@ class App extends Component{
             </footer>
           </div >
         </HashRouter>
-      );
+      )
    }
 }
 const mapState = state => {

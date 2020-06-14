@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
 import { getUser } from '../reducers/user-reducer'
 
 
 class SignUp extends Component{
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       firstName: '',
@@ -14,18 +14,18 @@ class SignUp extends Component{
       email: '',
       password1: '',
       password2: ''
-    };
+    }
 
-    this.updateFirstName = this.updateFirstName.bind(this);
-    this.updateLastName = this.updateLastName.bind(this);
-    this.updateEmail = this.updateEmail.bind(this);
-    this.updatePassword1 = this.updatePassword1.bind(this);
-    this.updatePassword2 = this.updatePassword2.bind(this);
-    this.handleSignUp = this.handleSignUp.bind(this);
-    this.validateSignUpForm = this.validateSignUpForm.bind(this);
-    this.validateName = this.validateName.bind(this);
-    this.validateEmail = this.validateEmail.bind(this);
-    this.validatePassword = this.validatePassword.bind(this);
+    this.updateFirstName = this.updateFirstName.bind(this)
+    this.updateLastName = this.updateLastName.bind(this)
+    this.updateEmail = this.updateEmail.bind(this)
+    this.updatePassword1 = this.updatePassword1.bind(this)
+    this.updatePassword2 = this.updatePassword2.bind(this)
+    this.handleSignUp = this.handleSignUp.bind(this)
+    this.validateSignUpForm = this.validateSignUpForm.bind(this)
+    this.validateName = this.validateName.bind(this)
+    this.validateEmail = this.validateEmail.bind(this)
+    this.validatePassword = this.validatePassword.bind(this)
   }
 
   updateFirstName(event) {
@@ -44,51 +44,51 @@ class SignUp extends Component{
       this.setState({ password2: event.target.value })
   }
   handleSignUp(e) {
-    e.preventDefault();
+    e.preventDefault()
     if (this.validateSignUpForm()) {
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password1)
       .then((cred) => {
-        const user = firebase.auth().currentUser;
+        const user = firebase.auth().currentUser
         if (user) {
           user.updateProfile({
             displayName: `${this.state.firstName} ${this.state.lastName}`
           })
           .then(data => {
-            this.props.getUser();
-            this.props.history.push('/admin');
+            this.props.getUser()
+            this.props.history.push('/admin')
           })
           .catch(function(error) {
-            console.error(errer);
-          });
+            console.error(errer)
+          })
         }
       })
       .catch(function(error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error(`${errorCode}: ${errorMessage}`);
-      });
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.error(`${errorCode}: ${errorMessage}`)
+      })
     }
   }
   validateSignUpForm() {
     // validate first name
     if (!this.state.firstName || !this.validateName(this.state.firstName)) {
-      alert('Please enter a valid first name');
-      return false;
+      alert('Please enter a valid first name')
+      return false
     }
     // validate last name
     if (!this.state.lastName || !this.validateName(this.state.lastName)) {
-      alert('Please enter a valid last name');
-      return false;
+      alert('Please enter a valid last name')
+      return false
     }
     // validate email
     if (!this.state.email || !this.validateEmail(this.state.email)) {
-      alert('Please enter a valid email address');
-      return false;
+      alert('Please enter a valid email address')
+      return false
     }
     // validate password match
     if (this.state.password1 !== this.state.password2) {
-      alert('passwords do not match');
-      return false;
+      alert('passwords do not match')
+      return false
     }
     // validate password length
     if (!this.state.password1 || !this.validatePassword(this.state.password1)) {
@@ -96,39 +96,39 @@ class SignUp extends Component{
         'passwords must be at least 8 characters\n' +
         'passwords must congtain at least 1 upper and lower case letter\n' +
         'passwords must congtain at least 1 special character'
-      );
-      return false;
+      )
+      return false
     }
-    return true;
+    return true
   }
   validateName(str){
-    return !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\0-9?]/g.test(str);
+    return !/[~`!#$%\^&*+=\-\[\]\\',/{}|\\":<>\0-9?]/g.test(str)
   }
   validateEmail(str){
-    return /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/g.test(str);
+    return /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/g.test(str)
   }
   validatePassword(str) {
-    const lowerCaseLetters = /[a-z]/g;
-    const capitalCaseLetters = /[A-Z]/g;
-    const specialCharacters = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g
-    const numbers = /[0-9]/g;
+    const lowerCaseLetters = /[a-z]/g
+    const capitalCaseLetters = /[A-Z]/g
+    const specialCharacters = /[~`!#$%\^&*+=\-\[\]\\',/{}|\\":<>\?]/g
+    const numbers = /[0-9]/g
 
     if(!str.match(lowerCaseLetters)) {
-      return false;
+      return false
     }
     if(!str.match(capitalCaseLetters)) {
-      return false;
+      return false
     }
     if(!str.match(specialCharacters)) {
-      return false;
+      return false
     }
     if(!str.match(numbers)) {
-      return false;
+      return false
     }
     if(str.length < 8) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
    render(){
@@ -151,7 +151,7 @@ class SignUp extends Component{
             </form>
             <p>or <Link to="/admin">Log In</Link> here</p>
          </div>
-      );
+      )
    }
 }
 
@@ -161,4 +161,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(null, mapDispatch)(SignUp);
+export default connect(null, mapDispatch)(SignUp)
