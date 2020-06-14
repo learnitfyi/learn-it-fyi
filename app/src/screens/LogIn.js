@@ -38,7 +38,7 @@ class LogIn extends Component{
           <label className="hidden" htmlFor="email">E-mail Address</label>
           <input type="email" id="email" value={this.state.email} placeholder="E-Mail Address" onChange={this.updateEmail} />
           <label className="hidden" htmlFor="password">Password</label>
-          <input type="text" id="password" value={this.state.password} placeholder="Password" onChange={this.updatePassword} />
+          <input type="password" id="password" value={this.state.password} placeholder="Password" onChange={this.updatePassword} />
           <input type="submit" id="password" value="Log In" />
         </form>
         <p>or <Link to="/sign-up">Sign Up</Link> here</p>
