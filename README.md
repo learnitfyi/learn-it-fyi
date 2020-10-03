@@ -8,6 +8,6 @@ To get up and running:
 5) run `npm run js` in the second terminal window
 6) run `npm start` in the third
 
-You can now view the site in the browser on localhost at the port identified in terminal
+You can now view the site in the browser at localhost:5000
 
 The first two terminal windows are watching for changes to SCSS and JS files, so any time you save, just refresh your browser to see your changes.
