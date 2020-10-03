@@ -4,9 +4,9 @@ To get up and running:
 
 1) clone the repo
 2) open 3 terminals and `cd` into the root directory
-3) run `npm run sass` in one terminal
-4) run `npm run js` in the second terminal window
-5) run `npm start` in the third
+3) run `npm install` in a terminal to install all node modules, then run `npm run sass` in the same terminal
+5) run `npm run js` in the second terminal window
+6) run `npm start` in the third
 
 You can now view the site in the browser on localhost at the port identified in terminal
 
