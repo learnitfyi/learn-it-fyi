@@ -1,3 +1,7 @@
+const data = require('../db/learn_it_database.json')
+console.log('carreers', data.careers)
+
+
 /* ACTION TYPES */
 const GOT_CAREERS = 'GOT_CAREERS'
 
@@ -9,8 +13,9 @@ const gotCareers = (careers) => {
 /* THUNK CREATORS */
 export const getCareers = (item) => async dispatch => {
   try {
-      const careerData = await firebase.firestore().collection('careers').get()
-      dispatch(gotCareers(careerData.docs))
+      // const careerData = await firebase.firestore().collection('careers').get()
+      // dispatch(gotCareers(careerData.docs))
+      dispatch(gotCareers(data.careers))
     } catch (err) {
     console.error(err)
   }

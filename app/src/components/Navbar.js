@@ -23,8 +23,8 @@ class Navbar extends Component{
               <Link to="/">LearnIt</Link>
             </div>
             <div className="navbar__links-container">
-              <Link to="/software-engineer">Software Engineer</Link>
-              <Link to="/data-scientist">Data Scientist</Link>
+              <a href="javascript:void(0)">Careers</a>
+              <a href="javascript:void(0)">Skills</a>
               {this.props.loggedIn
                 ? <Link to="/admin">Admin</Link>
                 : null

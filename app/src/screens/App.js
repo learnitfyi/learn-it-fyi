@@ -12,6 +12,7 @@ import Home from "./Home"
 import LogIn from "./LogIn"
 import NotFound from "./NotFound"
 import SignUp from "./SignUp"
+import Skill from "./Skill"
 
 /* COMPONENTS */
 import Navbar from '../components/Navbar'
@@ -44,9 +45,9 @@ class App extends Component{
               {/* SCREENS */}
               <Route exact path='/' component={Home} />
               <Route exact path='/admin' component={Admin} />
-              <Route exact path='/data-scientist' component={Career} />
+              <Route exact path='/career/:path' component={Career} />
+              <Route exact path='/skill/:path' component={Skill} />
               <Route exact path='/sign-up' component={SignUp} />
-              <Route exact path='/software-engineer' component={Career} />
               {/* 404 PAGE */}
               <Route component={NotFound} />
             </Switch>

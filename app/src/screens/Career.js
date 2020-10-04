@@ -1,15 +1,39 @@
 import React, { Component } from 'react'
-import pathToTitle from '../assets/js/lib/path-to-title'
+import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
 
 
 class Career extends Component{
   render() {
+
     return(
       <div id="career">
-        <h1 className="title">{pathToTitle(this.props.match.path)}</h1>
+        <h1 className="title">{this.props.career.career_name}</h1>
+        <ul>
+          {this.props.career.career_skills && this.props.career.career_skills.sort().map(career_skill => {
+            const path = `/skill/${career_skill.toLowerCase().split('_').join('-')}`
+            const displayName = career_skill.split('_').map(el => el.charAt(0).toUpperCase()+el.slice(1)).join(' ')
+            return (
+              <li>
+                <Link to={path}>{displayName}</Link>
+              </li>
+            )}
+          )}
+        </ul>
       </div>
     )
   }
 }
 
-export default Career
+const mapState = (state, ownProps) => {
+  return {
+    career: state.careers.find(el => el.career_path === ownProps.match.params.path) || {},
+  }
+}
+
+// const mapDispatch = dispatch => {
+//   return {
+//   }
+// }
+
+export default connect(mapState, null)(Career)

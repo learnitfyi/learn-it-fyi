@@ -1,0 +1,351 @@
+{
+  "careers": [
+    {
+      "career_id": "data_scientist",
+      "career_name": "Data Scientist",
+      "career_path": "data-scientist",
+      "career_description": "A data scientist analyzs and interpret complex data in order to assist a business in its decision-making.",
+      "career_skills": [
+        "python",
+        "r",
+        "statistics",
+        "machine_learning",
+        "text_mining",
+        "natural_language_processing",
+        "Hadoop",
+        "Hive",
+        "Pig",
+        "Apache_Spark",
+        "artificial_inteligence",
+        "data_visualization",
+        "deep_learning",
+        "experimentation",
+        "storytelling",
+        "data_wrangling"
+      ]
+    },
+    {
+      "career_id": "data_anlayst",
+      "career_name": "Data Analyst",
+      "career_path": "data-analyst",
+      "career_description": "A data analyst works with data to provide insights. ",
+      "career_skills": [
+        "python",
+        "r",
+        "sql",
+        "data_visualization",
+        "microsoft_excel",
+        "storytelling",
+        "statistics",
+        "SAS",
+        "Git",
+        "data_wrangling",
+        "experimentation"
+      ]
+    },
+    {
+      "career_id": "software_engineer",
+      "career_name": "Software Engineer",
+      "career_path": "software-engineer",
+      "career_description": "A software engineer applies mathematical analysis and the principles of computer science in order to design and develop computer software.",
+      "career_skills": [
+        "javascript",
+        "css",
+        "html",
+        "react",
+        "redux",
+        "aws",
+        "microsoft_azure",
+        "google_cloud_platfom",
+        "data_structure",
+        "algorithms",
+        "Git",
+        "docker",
+        "kubernetes",
+        "linux",
+        "eclipse",
+        "visual_studio",
+        "databases",
+        "sql",
+        "c++",
+        "java",
+        "python",
+        "node.js",
+        "c#",
+        "php",
+        "C",
+        "ruby"
+      ]
+    },
+    {
+      "career_id": "mobile_app_developer",
+      "career_name": "Mobile App Developer",
+      "career_path": "mobile-app-developer",
+      "career_description": "A Mobile app development is a specialized developer that builds mobile apps for mobile devices.",
+      "career_skills": [
+        "javascript",
+        "css",
+        "html",
+        "react_native",
+        "react",
+        "xcode",
+        "android_studio",
+        "angular",
+        "uiux",
+        "c#",
+        "java",
+        "kotlin",
+        "objective_c",
+        "swift",
+        "c#",
+        "c++",
+        "c",
+        "Git",
+        "node.js",
+        "php",
+        "restful_apis",
+        "sql"
+      ]
+    },
+    {
+      "career_id": "web_developer",
+      "career_name": "Web Developer",
+      "career_path": "web-developer",
+      "career_description": "A web developer is a programmer who specializes in the development of Web applications",
+      "career_skills": [
+        "javascript",
+        "css",
+        "html",
+        "wordpress",
+        "drupal",
+        "Git",
+        "graphic_design",
+        "uiux",
+        "jquery",
+        "hosting",
+        "responsive_design",
+        "content_management_system"
+      ]
+    },
+    {
+      "career_id": "devops_engineer",
+      "career_name": "DevOps Engineer",
+      "career_path": "devops-engineer",
+      "career_description": "a DevOps engineer is an IT professional who works with software developers, system operators and admins, IT operations staff and others to oversee and/or facilitate code releases or deployments on a CI/CD basis.",
+      "career_skills": [
+        "aws",
+        "kubernetes",
+        "terraform",
+        "datadog",
+        "ansible",
+        "helm",
+        "prometheus",
+        "Git",
+        "bitbucket",
+        "jenkins",
+        "docker",
+        "microsoft_azure",
+        "google_cloud_platfom",
+        "ruby",
+        "python",
+        "java",
+        "javascript",
+        "php",
+        "bash",
+        "shell",
+        "node.js",
+        "source_control_systems",
+        "linux"
+      ]
+    },
+    {
+      "career_id": "ux_designer",
+      "career_name": "UX Designer",
+      "career_path": "ux-designer",
+      "career_description": "A UX designer is responsible for how a product or website feels. This involves branding, design, usability and function.",
+      "career_skills": [
+        "adobe_xd",
+        "sketch",
+        "adobe_illustrator",
+        "adobe_indesign",
+        "wireframing",
+        "prototyping",
+        "research",
+        "html",
+        "css",
+        "javascript",
+        "user_experience",
+        "jquery"
+      ]
+    },
+    {
+      "career_id": "graphic_designer",
+      "career_name": "Graphic Designer",
+      "career_path": "graphic-designer",
+      "career_description": "A graphic designer is a professional within the graphic design and graphic arts industry who assembles together images, typography, or motion graphics to create a piece of design.",
+      "career_skills": [
+        "adobe_illustrator",
+        "adobe_photoshop",
+        "html",
+        "css",
+        "adobe_indesign",
+        "quark",
+        "photo_editing",
+        "typography",
+        "logo_creation",
+        "color",
+        "illustration",
+        "uiux",
+        "print_design",
+        "branding"
+      ]
+    },
+    {
+      "career_id": "technical_project_manager",
+      "career_name": "Technical Project Manager",
+      "career_path": "technical-project-manager",
+      "career_description": "A Technical Project Manager is responsible for providing project planning and management for established tech-initiatives within a company. ",
+      "career_skills": [
+        "trello",
+        "agile",
+        "scrum",
+        "jira"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "skill_id": "javascript",
+      "skill_name": "JavaScript",
+      "skill_path": "javascript",
+      "skill_description": "Description goes here.",
+      "skill_books": [
+        {
+          "book_title": "How to Learn JS",
+          "book_url": "http://amazon.com",
+          "book_description": "Book description goes here."
+        }
+      ],
+      "skill_videos": [
+        {
+          "video_title": "How to Watch JS",
+          "video_url": "http://youtube.com",
+          "video_description": "This video description goes here."
+        }
+      ],
+      "skill_courses": [
+        {
+          "course_title": "JS in a Day",
+          "course_url": "http://lynda.com",
+          "course_description": "This course description goes here."
+        }
+      ]
+    },
+    {
+      "skill_id": "python",
+      "skill_name": "Python",
+      "skill_path": "python",
+      "skill_description": "Description goes here.",
+      "skill_books": [
+        {
+          "book_title": "How to Learn Python",
+          "book_url": "http://amazon.com",
+          "book_description": "Python book description goes here."
+        },
+        {
+          "book_title": "Learn Python",
+          "book_url": "https://www.learnpython.org/",
+          "book_description": "This book description goes here."
+        }
+      ],
+      "skill_videos": [
+        {
+          "video_title": "How to Watch Python",
+          "video_url": "http://youtube.com",
+          "video_description": "This Python video description goes here."
+        }
+      ],
+      "skill_courses": [
+        {
+          "course_title": "Python in a Day",
+          "course_url": "https://www.datacamp.com/",
+          "course_description": "This Python course description goes here."
+        }
+      ]
+    },
+    {
+      "skill_id": "r",
+      "skill_name": "R",
+      "skill_path": "r",
+      "skill_description": "Description goes here.",
+      "skill_books": [
+        {
+          "book_title": "How to Learn R",
+          "book_url": "http://amazon.com",
+          "book_description": "R book description goes here."
+        },
+        {
+          "book_title": "How to Also Learn R",
+          "book_url": "http://amazon.com/2",
+          "book_description": "This R book description goes here."
+        }
+      ],
+      "skill_videos": [
+        {
+          "video_title": "How to Watch R",
+          "video_url": "http://youtube.com",
+          "video_description": "This R video description goes here."
+        }
+      ],
+      "skill_courses": [
+        {
+          "course_title": "R in a Day",
+          "course_url": "http://lynda.com",
+          "course_description": "This amazing R course description goes here."
+        }
+      ]
+    },
+    {
+      "skill_id": "user_experience",
+      "skill_name": "User Experience",
+      "skill_path": "user-experience",
+      "skill_description": "User experience is the process of enhancing a person’s experience with a product or service. It involves an understanding of their behavior to create a successful design.",
+      "skill_books": [
+        {
+          "book_title": "100 Things Every Designer Needs to Know About People",
+          "book_url": "https://www.amazon.com/Things-Designer-People-Voices-Matter/dp/0136746918/ref=sr_1_1?dchild=1&keywords=100+Things+Every+Designer+Needs+to+Know+About+People&qid=1601744689&s=books&sr=1-1",
+          "book_description": "Book description goes here."
+        },
+        {
+          "book_title": "The Elements of User Experience: User-Centered Design for the Web and Beyond",
+          "book_url": "https://www.amazon.com/Elements-User-Experience-User-Centered-Design/dp/0321683684",
+          "book_description": "This book description goes here."
+        }
+      ],
+      "skill_videos": [
+        {
+          "video_title": "The first secret of great design | Tony Fadell",
+          "video_url": "https://www.youtube.com/watch?v=9uOMectkCCs",
+          "video_description": "This video description goes here."
+        },
+        {
+          "video_title": "The ROI of User Experience",
+          "video_url": "https://www.youtube.com/watch?v=O94kYyzqvTc",
+          "video_description": "This video description goes here."
+        }
+      ],
+      "skill_courses": [
+        {
+          "course_title": "User Experience Design Fundamentals",
+          "course_url": "https://www.udemy.com/course/user-experience-design-fundamentals/",
+          "course_description": "Design Web Sites and Mobile Apps that Your Users Love and Return to Again and Again with UX Expert Joe Natoli."
+        },
+        {
+          "course_title": "Intro to UX: Fundamentals of Usability",
+          "course_url": "https://www.skillshare.com/classes/Intro-to-UX-Fundamentals-of-Usability/538580770",
+          "course_description": "Join UserTesting's Marieke McCloskey for an insightful dive into usability — what it means, why it matters, and how you can optimize your product, service, or business."
+        }
+      ]
+    }
+  ]
+}
